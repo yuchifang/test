@@ -16,6 +16,7 @@ function toReverse(input) {
     let analyzeArr = analyzeObj(input, arr, index)
     let buildObj = {}
     let objValue = ""
+    if (!analyzeArr) return undefined
     for (let i = 0; i < analyzeArr.length; i++) {
         if (analyzeArr[i] !== undefined && analyzeArr[i + 1] !== undefined) {
 
@@ -35,6 +36,8 @@ function toReverse(input) {
 }
 
 function analyzeObj(input, arr) {
+    if (Object.keys(input).length === 0) return undefined
+
     let key = Object.keys(input)[0]
     let value = Object.values(input)[0]
     arr.push(key)
@@ -45,4 +48,5 @@ function analyzeObj(input, arr) {
     arr.push(value)
     return arr
 }
-module.exports = { analyzeObj, }
+
+module.exports = { analyzeObj, toReverse }
