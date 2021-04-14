@@ -12,8 +12,7 @@ console.log(toReverse(inputValue))
 
 function toReverse(input) {
     let arr = []
-    let index = 0
-    let analyzeArr = analyzeObj(input, arr, index)
+    let analyzeArr = analyzeObj(input, arr)
     let buildObj = {}
     let objValue = ""
     if (!analyzeArr) return undefined
